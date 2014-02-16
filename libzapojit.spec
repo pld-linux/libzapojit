@@ -4,10 +4,11 @@
 %bcond_without	static_libs	# don't build static libraries
 #
 Summary:	GLib/GObject wrapper for the SkyDrive and Hotmail REST APIs
+Summary(pl.UTF-8):	Obudowanie GLib/GObject dla API REST-owych SkyDrive'a i Hotmaila
 Name:		libzapojit
 Version:	0.0.3
 Release:	1
-License:	LGPL v2.1
+License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libzapojit/0.0/%{name}-%{version}.tar.xz
 # Source0-md5:	9de0d94e2c6a86852133a6f2f0b5fee1
@@ -23,11 +24,14 @@ BuildRequires:	gtk-doc >= 1.11
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	json-glib-devel
 BuildRequires:	libsoup-devel >= 2.38.0
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2
 BuildRequires:	pkgconfig
-BuildRequires:	rest-devel
+BuildRequires:	rest-devel >= 0.7
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+Requires:	glib2 >= 1:2.28.0
+Requires:	libsoup >= 2.38.0
+Requires:	rest >= 0.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -39,6 +43,15 @@ SkyDrive operations:
 - Reading the properties of a file, folder or photo.
 - Uploading files and photos.
 
+%description -l pl.UTF-8
+libzapojit to obudowanie GLib/GObject dla API REST-owych SkyDrive'a i
+Hotmaila. Obsługuje obiekty plików i folderów SkyDrive'a oraz
+następujące operacje SkyDrive:
+- usuwanie pliku, folderu lub zdjęcia,
+- listowanie zawartości folderu,
+- odczyt właściwości pliku, folderu lub zdjecia,
+- przesyłanie plików i zdjęć.
+
 %package devel
 Summary:	Header files for libzapojit library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libzapojit
@@ -48,7 +61,7 @@ Requires:	glib2-devel >= 1:2.28.0
 Requires:	gnome-online-accounts-devel
 Requires:	json-glib-devel
 Requires:	libsoup-devel >= 2.38.0
-Requires:	rest-devel
+Requires:	rest-devel >= 0.7
 
 %description devel
 Header files for libzapojit library.
