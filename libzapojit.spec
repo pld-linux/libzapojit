@@ -15,7 +15,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/libzapojit/0.0/%{name}-%{version
 URL:		http://live.gnome.org/Zapojit
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.28.0
 BuildRequires:	gnome-common >= 3.6.0
 BuildRequires:	gnome-online-accounts-devel
