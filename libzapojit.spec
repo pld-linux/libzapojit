@@ -2,12 +2,12 @@
 # Conditional build:
 %bcond_without	apidocs		# do not build and package API docs
 %bcond_without	static_libs	# don't build static libraries
-#
+
 Summary:	GLib/GObject wrapper for the SkyDrive and Hotmail REST APIs
 Summary(pl.UTF-8):	Obudowanie GLib/GObject dla API REST-owych SkyDrive'a i Hotmaila
 Name:		libzapojit
 Version:	0.0.3
-Release:	2
+Release:	3
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/libzapojit/0.0/%{name}-%{version}.tar.xz
@@ -86,6 +86,9 @@ Summary:	libzapojit API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki libzapojit
 Group:		Documentation
 Requires:	gtk-doc-common
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 API documentation for libzapojit library.
